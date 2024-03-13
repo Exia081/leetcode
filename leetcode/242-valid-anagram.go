@@ -25,3 +25,10 @@ func isAnagram(s string, t string) bool {
 	}
 	return true
 }
+
+
+/*
+optimize
+1, use char slice which its length is 26, because only 26 lower letter in the question.
+2, use rune to traverse the string if this question require utf8mb4 character.
+*/
