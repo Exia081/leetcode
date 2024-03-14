@@ -13,7 +13,7 @@ description: https://leetcode.com/problems/top-k-frequent-elements/description/
 1，用 hashmap 来保存各个元素的出现次数
 2，利用counting sort算法原理，进行分桶插入，将出现次数相通的元素保存在array中
 time complexity : O(n)
-space complexity : O(n)
+space complexity : O(n)  if n == k still O(n)
 */
 func topKFrequent(nums []int, k int) []int {
 	mp := make(map[int]int)
@@ -46,6 +46,17 @@ func topKFrequent(nums []int, k int) []int {
 
 	return result
 }
+
+/*
+todo
+https://leetcode.com/problems/top-k-frequent-elements/editorial/
+其他方案
+1，hash + heap
+time: O(n log k) if k <<（远小于） n ,actually O(n), if k == n , actually O( n log n)
+space: O(n + k)  actually O(n) because n >= k ,if k == n , O(n+n) still O(n)
+
+2，还有快速排序方案，但依然没有计数排序高效
+*/
 
 func main() {
 	nums := []int{3, 0, 1, 0}
