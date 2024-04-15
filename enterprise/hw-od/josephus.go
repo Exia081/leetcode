@@ -60,7 +60,34 @@ func JosephusRing(total, call, left int) []int {
 	return result
 }
 
+type Node struct {
+	Val  int
+	Next *Node
+}
+type CircleLinkedList struct {
+	Head *Node
+	Tail *Node
+	Size int
+}
+
+func (s *CircleLinkedList) AddNode(val int) {
+	node := &Node{Val: val}
+	if s.Size == 0 {
+		s.Head = node
+		s.Tail = node
+	} else {
+		node.Next = s.Head
+		s.Tail.Next = node
+		s.Tail = node
+	}
+	s.Size++
+}
+func (s *CircleLinkedList) RemoteNode(node *Node) {
+
+}
+
 func main() {
-	fmt.Println(JosephusRing(2, 3, 1))
-	fmt.Println(JosephusRing(41, 3, 2))
+	//fmt.Println(JosephusRing(2, 3, 1))
+	//fmt.Println(JosephusRing(41, 3, 2))
+	fmt.Println(JosephusRing(100, 4, 3))
 }
