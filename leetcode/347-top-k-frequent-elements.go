@@ -49,8 +49,9 @@ func topKFrequent(nums []int, k int) []int {
 
 func topKFrequentBest(nums []int, k int) []int {
 	/*
-		time : O(n)
-		space : O(n)
+		    用计数排序方法来实现统计
+			time : O(n)
+			space : O(n)
 	*/
 	countingBucket := make([][]int, len(nums)+1)
 
