@@ -44,3 +44,32 @@ func buildString(arr [26]int32) string {
 	}
 	return string(result)
 }
+
+/*
+//直接定义一个新的类型，一个长度为 26的数组，再做对应的 Map
+//time complexity O ( n * L ) n is the number of string in list, L is the length of string
+//space complexity O ( n * L )
+
+type Key [26]byte
+
+func groupAnagrams(strs []string) [][]string {
+    groups := make(map[Key][]string)
+    for _, v := range strs {
+        key := strkey(v)
+        groups[key] = append(groups[key],v)
+    }
+    result := make([][]string, 0, len(groups))
+	for _, v := range groups {
+		result = append(result, v)
+	}
+	return result
+}
+
+func strkey(str string) (key Key) {
+    for i := range str {
+		key[str[i]-'a']++
+	}
+	return key
+
+}
+*/
