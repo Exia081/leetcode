@@ -47,6 +47,33 @@ func topKFrequent(nums []int, k int) []int {
 	return result
 }
 
+func topKFrequentBest(nums []int, k int) []int {
+	/*
+		time : O(n)
+		space : O(n)
+	*/
+	countingBucket := make([][]int, len(nums)+1)
+
+	countingMap := make(map[int]int, 0)
+	result := []int{}
+
+	for _, v := range nums {
+		countingMap[v]++
+	}
+
+	for number, count := range countingMap {
+		countingBucket[count] = append(countingBucket[count], number)
+	}
+
+	for i := len(countingBucket) - 1; i >= 0 && k > 0; i-- {
+		if len(countingBucket[i]) != 0 {
+			result = append(result, countingBucket[i]...)
+			k -= len(countingBucket[i])
+		}
+	}
+	return result
+}
+
 /*
 todo
 https://leetcode.com/problems/top-k-frequent-elements/editorial/
