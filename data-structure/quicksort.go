@@ -11,7 +11,7 @@ func quickSort(arr []int, start, end int) {
 	j := end
 
 	for i <= j {
-		if arr[i] <= povit {
+		if arr[i] < povit {
 			i++
 		} else {
 			arr[i], arr[j] = arr[j], arr[i]
