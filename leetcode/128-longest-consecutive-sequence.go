@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 func longestConsecutive(nums []int) int {
 	// Construct a set out of the nums array.
@@ -32,6 +35,28 @@ func longestConsecutive(nums []int) int {
 	}
 
 	return maxSequenceLen
+}
+
+func longestConsecutiveInSorts(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+
+	slices.Sort(nums)
+	var count, longest int = 1, 1
+
+	for i := 1; i < len(nums); i++ {
+		if nums[i] == nums[i-1]+1 {
+			count++
+			if count > longest {
+				longest = count
+			}
+		} else if nums[i] != nums[i-1] {
+			count = 1
+		}
+	}
+
+	return longest
 }
 
 func max(a, b int) int {
