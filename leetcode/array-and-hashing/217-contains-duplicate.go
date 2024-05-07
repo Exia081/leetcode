@@ -1,4 +1,4 @@
-package main
+package array_and_hashing
 
 /*
 	description : https://leetcode.com/problems/contains-duplicate/description/
