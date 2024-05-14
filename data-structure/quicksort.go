@@ -10,7 +10,7 @@ func quickSort(arr []int, start, end int) {
 	i := start + 1
 	j := end
 
-	for i <= j {
+	for i <= j { //@warning notice
 		if arr[i] < povit {
 			i++
 		} else {

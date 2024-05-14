@@ -24,7 +24,7 @@ func binarySearch(list []int, item int) int {
 	low := 0
 	high := len(list) - 1
 
-	for low <= high {
+	for low <= high { //@warning notice
 		mid := (low + high) / 2
 		guess := list[mid]
 
@@ -53,5 +53,3 @@ func main() {
 	fmt.Println(BinarySearch(arr, 3))
 	fmt.Println(BinarySearch(arr, 0))
 }
-
-
