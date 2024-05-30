@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /*
 两个思路
@@ -9,7 +11,6 @@ import "fmt"
 */
 
 func binarySearch(nums []int, target int) int {
-
 	low := 0
 	high := len(nums) - 1
 
